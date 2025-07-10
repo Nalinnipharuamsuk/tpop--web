@@ -1,19 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // ✅ เพิ่มตรงนี้
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const router = useRouter(); // ✅ ใช้งาน router
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`Email: ${email}\nPassword: ${password}\n(ยังไม่เชื่อม backend)`);
+        // ✅ ไม่ต้อง alert
+        router.push("/"); // ✅ ไปหน้า http://localhost:3000/
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-300 to-purple-500 flex items-center justify-center p-4">
+        <div className="min-h-screen bg-gradient-to-tr from-purple-400 to-white flex items-center justify-center p-4">
             <form
                 onSubmit={handleSubmit}
                 className="bg-white rounded-xl p-8 w-full max-w-sm shadow-lg"
@@ -61,11 +64,10 @@ export default function LoginPage() {
                 </button>
                 <p className="mt-6 text-center text-sm text-gray-400">
                     มีบัญชีอยู่แล้ว?{" "}
-                    <a href="/login" className="text-purple-500 font-semibold hover:underline">
-                        เข้าสู่ระบบ
+                    <a href="/register" className="text-purple-500 font-semibold hover:underline">
+                        ลงทะเบียน
                     </a>
                 </p>
-
             </form>
         </div>
     );
