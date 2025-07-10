@@ -36,7 +36,7 @@ const BillboardPage = () => {
       </Head>
 
       {/* Header */}
-      <div className="bg-gradient-to-b from-purple-400 to-white text-white text-center py-16 shadow-md"></div>
+      <div className="bg-gradient-to-b from-purple-400 to-white text-white text-center py-14 shadow-md"></div>
 
       {/* Title */}
       <div className="ml-10 py-8">

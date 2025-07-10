@@ -37,7 +37,7 @@ const ProfilePage = () => {
         />
       </Head>
 
-      <header className="bg-gradient-to-b from-purple-400 to-white p-16 text-center shadow-md">
+      <header className="bg-gradient-to-b from-purple-400 to-white p-14 text-center shadow-md">
 
       </header>
 

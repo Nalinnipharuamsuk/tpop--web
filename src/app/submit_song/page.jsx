@@ -7,7 +7,7 @@ const SubmitSongPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-purple-100 font-sans">
       {/* Header */}
-      <div className="bg-gradient-to-b from-purple-400 to-white shadow-md text-white text-center flex items-center justify-center p-16">
+      <div className="bg-gradient-to-b from-purple-400 to-white shadow-md text-white text-center flex items-center justify-center p-14">
       </div>
 
       {/* Form */}
