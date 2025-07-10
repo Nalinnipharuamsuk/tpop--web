@@ -30,7 +30,7 @@ export default function LoginPage() {
   const iconStyle = "absolute left-4 top-1/2 -translate-y-1/2 text-purple-400";
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-purple-400 to-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-purple-400 to-white flex items-center justify-center px-4">
       <div className="bg-white bg-opacity-90 rounded-3xl shadow-2xl max-w-md w-full p-8">
         <h1 className="text-3xl font-bold text-purple-700 text-center mb-6">เข้าสู่ระบบ T-POP</h1>
         <p className="text-center text-gray-500 mb-6 text-sm">
