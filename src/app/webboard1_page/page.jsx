@@ -10,7 +10,7 @@ const FanPage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gradient-to-b from-purple-200 to-white">
       {/* Navbar */}
-      <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-16 px-6 flex justify-between items-center">
+      <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-14 px-6 flex justify-between items-center">
       </nav>
 
       {/* Main Content */}
