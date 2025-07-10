@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Footer from "../../../components/Footer";
 const FanPage = () => {
   const feedData = new Array(6).fill({
     img: 'https://mellow975.mcot.net/uploads/article/new_676e3a05ec959.jpg', // ใช้ภาพเดียวกันเพื่อให้ครบ
@@ -10,7 +10,7 @@ const FanPage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gradient-to-b from-purple-200 to-white">
       {/* Navbar */}
-      <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-10 px-6 flex justify-between items-center">
+      <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-16 px-6 flex justify-between items-center">
       </nav>
 
       {/* Main Content */}
@@ -67,7 +67,7 @@ const FanPage = () => {
         </div>
 
         {/* FAN FEED */}
-        <div className="max-w-6xl mx-auto px-6 pb-12">
+        <div className="max-w-3xl mx-auto px-6 pb-12">
           <h2 className="text-lg font-semibold mb-4">FAN FEED</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {feedData.map((item, index) => (
@@ -91,6 +91,7 @@ const FanPage = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
