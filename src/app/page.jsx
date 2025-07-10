@@ -69,7 +69,7 @@ export default function Home() {
         />
       </Head>
 
-      <header className="bg-gradient-to-b from-purple-400 to-purple-500 py-4 shadow-md sticky top-0 z-50">
+      <header className="bg-gradient-to-b from-purple-400 to-white py-4 shadow-md sticky top-0 z-50">
         <form className="max-w-5xl mx-auto flex items-center gap-4 px-4">
           <img
             src="/logo.png"
@@ -126,7 +126,7 @@ export default function Home() {
 
 
         {/* Billboard Section */}
-        <section className="bg-gradient-to-b from-purple-400 to-purple-500 rounded-xl mt-10 p-6 text-white shadow-md">
+        <section className="bg-gradient-to-b from-purple-400 to-white rounded-xl mt-10 p-6 text-white shadow-md">
           <div className="flex justify-between items-center mb-6">
             <img
               src="bill.png"
@@ -166,7 +166,7 @@ export default function Home() {
         </section>
 
         {/* Add Song */}
-        <section className="bg-gradient-to-b from-purple-400 to-purple-500 rounded-xl mt-12 p-6 text-white shadow-md max-w-5xl mx-auto">
+        <section className="bg-gradient-to-b from-purple-400 to-white rounded-xl mt-12 p-6 text-white shadow-md max-w-5xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-4 drop-shadow-lg "
             style={{
               WebkitTextStroke: "0.5px purple",
@@ -175,13 +175,13 @@ export default function Home() {
             แจ้งเพลงใหม่เข้าชาร์ตได้ที่นี่
           </h2>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-lg sm:text-left text-center">
+            <p className="text-lg sm:text-left text-center text-purple-950">
               เพลงของศิลปินที่คุณชื่นชอบมาแล้วใช่มั้ย?
               <br />
               แจ้งเพลงใหม่เข้าชาร์ตตอนนี้เลย
             </p>
             <a href="/submit_song" className="inline-block">
-              <button className="from-purple-400 to-purple-600 transition rounded-full px-8 py-3 font-semibold shadow-lg">
+              <button className="text-purple-950 transition rounded-full px-8 py-3 font-semibold shadow-lg">
                 เพิ่มเพลง
               </button>
             </a>

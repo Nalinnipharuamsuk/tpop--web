@@ -1,13 +1,16 @@
-"use client";
-import React, { useState } from "react";
+'use client';
+import React, { useState } from 'react';
+import Footer from '../../../components/Footer';
+import Head from 'next/head';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const ProfilePage = () => {
   const [image, setImage] = useState(
-    "https://p16-va.lemon8cdn.com/tos-alisg-v-a3e477-sg/o0iL4A2yeEMgBuhAizivD2yCQSrPIjSAeKJgEB~tplv-tej9nj120t-origin.webp"
+    'https://p16-va.lemon8cdn.com/tos-alisg-v-a3e477-sg/o0iL4A2yeEMgBuhAizivD2yCQSrPIjSAeKJgEB~tplv-tej9nj120t-origin.webp'
   );
-  const [username, setUsername] = useState("Dum Samit");
-  const [lastname, setLastname] = useState("ดำ สมิด");
-  const [gender, setGender] = useState("male");
+  const [username, setUsername] = useState('Dum Samit');
+  const [lastname, setLastname] = useState('ดำ สมิด');
+  const [gender, setGender] = useState('male');
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -27,43 +30,53 @@ const ProfilePage = () => {
 
   return (
     <>
-      <link
-        href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
-        rel="stylesheet"
-      />
+      <Head>
+        <link
+          href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+          rel="stylesheet"
+        />
+      </Head>
 
-      <header style={styles.header}>
-        <h1 style={{ color: "white" }}>หน้าโปรไฟล์</h1>
+      <header className="bg-gradient-to-b from-purple-400 to-white p-16 text-center shadow-md">
+
       </header>
 
-      <main style={styles.container}>
-        <div style={styles.profile}>
-          <div style={styles.imageWrapper}>
-            <img src={image} alt="Profile" style={styles.image} />
+      <main className="p-5 min-h-screen  font-sans">
+        <div className="flex justify-center items-center gap-10 mb-8">
+          <div className="relative">
+            <img
+              src={image}
+              alt="Profile"
+              className="w-36 h-36 object-cover rounded-full border"
+            />
             <input
               type="file"
               id="uploadImage"
               accept="image/*"
-              style={{ display: "none" }}
+              className="hidden"
               onChange={handleImageChange}
             />
             <button
-              className="ri-pencil-line"
-              onClick={() => document.getElementById("uploadImage").click()}
-              style={styles.editIcon}
-              aria-label="แก้ไขรูปภาพ"
-            ></button>
-          </div>
+              onClick={() => document.getElementById('uploadImage').click()}
+              className="absolute top-2 right-2 w-9 h-9 flex items-center justify-center bg-gradient-to-b from-purple-200 to-purple-700 text-white rounded-full hover:scale-110 transition"
+              aria-label="เปลี่ยนรูปภาพ"
+            >
+              <i className="fas fa-pen text-sm" />
+            </button>
 
-          <div style={styles.profileText}>
-            <h2 style={{ fontSize: "40px", color: "#7e22ce" }}>{username}</h2>
-            <i className="ri-user-add-line"> 13 กำลังติดตาม</i>
+
+          </div>
+          <div>
+            <h2 className="text-3xl text-purple-700 font-semibold">{username}</h2>
+            <p className="text-gray-600 flex items-center gap-1">
+              <i className="ri-user-add-line" /> 13 กำลังติดตาม
+            </p>
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} style={styles.editForm}>
-          <div style={styles.inputGroup}>
-            <label htmlFor="username" style={styles.label}>
+        <form onSubmit={handleSubmit} className="bg-gradient-to-b bg-purple-200 max-w-xl mx-auto p-6 rounded-lg">
+          <div className="mb-4 flex items-center">
+            <label htmlFor="username" className="w-1/3 font-semibold text-gray-700">
               ชื่อผู้ใช้
             </label>
             <input
@@ -71,12 +84,12 @@ const ProfilePage = () => {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              style={styles.input}
+              className="w-2/3 p-2 rounded-lg border bg-white"
             />
           </div>
 
-          <div style={styles.inputGroup}>
-            <label htmlFor="lastname" style={styles.label}>
+          <div className="mb-4 flex items-center">
+            <label htmlFor="lastname" className="w-1/3 font-semibold text-gray-700">
               ชื่อ-นามสกุล
             </label>
             <input
@@ -84,19 +97,19 @@ const ProfilePage = () => {
               id="lastname"
               value={lastname}
               onChange={(e) => setLastname(e.target.value)}
-              style={styles.input}
+              className="w-2/3 p-2 rounded-lg border bg-white"
             />
           </div>
 
-          <div style={styles.inputGroup}>
-            <label htmlFor="gender" style={styles.label}>
+          <div className="mb-4 flex items-center">
+            <label htmlFor="gender" className="w-1/3 font-semibold text-gray-700">
               เพศ
             </label>
             <select
               id="gender"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
-              style={styles.input}
+              className="w-2/3 p-2 rounded-lg border bg-white"
             >
               <option value="male">ผู้ชาย</option>
               <option value="female">ผู้หญิง</option>
@@ -105,119 +118,25 @@ const ProfilePage = () => {
           </div>
         </form>
 
-        {/* ปุ่มอยู่ด้านล่างนอกฟอร์ม */}
-        <div style={styles.buttonContainer}>
-          <button onClick={handleSubmit} style={styles.submitBtn}>
+        <div className="flex justify-center gap-5 mt-6">
+          <button
+            onClick={handleSubmit}
+            className="bg-gradient-to-b bg-purple-500 text-white py-2 px-6 rounded-full"
+          >
             บันทึกข้อมูล
           </button>
-          <a href="/logout" style={styles.logoutBtn}>
+          <a
+            href="/logout"
+            className="text-gray-600 border border-gray-400 py-2 px-6 rounded-full bg-white"
+          >
             Logout
           </a>
         </div>
       </main>
 
-      <footer style={styles.footer}></footer>
+      <Footer />
     </>
   );
-};
-
-const styles = {
-  header: {
-    background: "linear-gradient(to bottom, #e9d5ff, #7e22ce)",
-    padding: "40px",
-    textAlign: "center",
-  },
-  container: {
-    padding: "20px",
-    fontFamily: "Arial, sans-serif",
-    backgroundColor: "#f9f5ff",
-    minHeight: "100vh",
-  },
-  profile: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "40px",
-    marginBottom: "30px",
-  },
-  imageWrapper: {
-    position: "relative",
-  },
-  image: {
-    width: "150px",
-    height: "150px",
-    borderRadius: "50%",
-    objectFit: "cover",
-  },
-  editIcon: {
-    position: "absolute",
-    top: "5px",
-    right: "5px",
-    background: "linear-gradient(to bottom, #e9d5ff, #7e22ce)",
-    border: "none",
-    borderRadius: "50%",
-    padding: "6px",
-    fontSize: "18px",
-    color: "white",
-    cursor: "pointer",
-  },
-  profileText: {
-    textAlign: "left",
-    color: "#333",
-  },
-  editForm: {
-    background: "linear-gradient(to bottom, #e9d5ff, #c084fc)",
-    padding: "25px",
-    borderRadius: "15px",
-    maxWidth: "600px",
-    margin: "0 auto",
-  },
-  inputGroup: {
-    display: "flex",
-    alignItems: "center",
-    marginBottom: "15px",
-  },
-  label: {
-    flex: "1",
-    marginLeft: "25px",
-    fontWeight: "bold",
-    color: "#333",
-  },
-  input: {
-    width: "70%",
-    padding: "10px",
-    borderRadius: "10px",
-    border: "1px solid #ccc",
-    backgroundColor: "#ffffff",
-    color: "#333",
-  },
-  buttonContainer: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "15px",
-    marginTop: "25px",
-  },
-  submitBtn: {
-    background: "linear-gradient(to bottom, #c084fc, #7e22ce)",
-    color: "white",
-    border: "1px solid #7e22ce",
-    borderRadius: "20px",
-    padding: "10px 20px",
-    cursor: "pointer",
-  },
-  logoutBtn: {
-    color: "#6D6D6D",
-    backgroundColor: "#fff",
-    border: "1px solid #6D6D6D",
-    padding: "10px 20px",
-    borderRadius: "20px",
-    textDecoration: "none",
-  },
-  footer: {
-    background: "linear-gradient(to bottom, #e9d5ff, #7e22ce)",
-    padding: "60px",
-    textAlign: "center",
-  },
 };
 
 export default ProfilePage;

@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Footer from "../../../components/Footer";
+import { useRouter } from "next/navigation";
 
 const bands = [
   {
     id_bands: 1,
-    band_name: "BUS ",
-    band_picture: "https://mintmagth.s3.ap-southeast-1.amazonaws.com/photos/shares/Mint%20People/2023/DEC%202023/PRE%20DEBUT%20BUS/656d77529481b.jpeg",
+    band_name: "4EVE ",
+    band_picture: "https://mellow975.mcot.net/uploads/article/new_676e3a05ec959.jpg",
     type: "group",
   },
   {
@@ -34,9 +35,16 @@ const bands = [
     band_picture: "https://media.readthecloud.co/wp-content/uploads/2023/06/29044921/three-man-down-thumbnail.jpg",
     type: "group",
   },
+  {
+    id_bands: 6,
+    band_name: "BUS ",
+    band_picture: "https://mintmagth.s3.ap-southeast-1.amazonaws.com/photos/shares/Mint%20People/2023/DEC%202023/PRE%20DEBUT%20BUS/656d77529481b.jpeg",
+    type: "group",
+  },
 ];
 
 export default function BandSearchPage() {
+    const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterType, setFilterType] = useState("all");
 
@@ -48,7 +56,7 @@ export default function BandSearchPage() {
 
   return (
     <div className="min-h-screen bg-white font-[Kanit]">
-      <div className="bg-gradient-to-b from-purple-400 to-purple-500 p-4 text-center">
+      <div className="bg-gradient-to-b from-purple-400 to-white p-4 text-center shadow-md ">
         <form
           className="flex justify-center items-center gap-4 flex-wrap"
           onSubmit={(e) => e.preventDefault()}
@@ -99,7 +107,7 @@ export default function BandSearchPage() {
               className={`px-4 py-2 text-sm rounded-full border transition ${
                 filterType === type
                   ? "bg-purple-600 text-white border-purple-600"
-                  : "text-white border-purple-600 hover:bg-purple-600 hover:text-white"
+                  : "text-black border-purple-600 hover:bg-purple-600 hover:text-white"
               }`}
               tabIndex={0}
               aria-pressed={filterType === type}
@@ -133,7 +141,7 @@ export default function BandSearchPage() {
                 </div>
                 <button
                   className="border border-purple-600 text-purple-600 px-4 py-2 rounded-full text-sm hover:bg-purple-600 hover:text-white transition"
-                  onClick={() => window.location.href = `/band/${band.id_bands}`}
+                  onClick={() => router.push("/artist_page")}
                   tabIndex={0}
                 >
                   เข้าชม
