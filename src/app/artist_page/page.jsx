@@ -1,4 +1,5 @@
 "use client";
+import Footer from "../../../components/Footer";
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -68,7 +69,7 @@ export default function GroupPage() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gradient-to-b from-purple-200 to-white">
       {/* Navbar */}
-      <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-10 px-6 flex justify-between items-center">
+      <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-16 px-6 flex justify-between items-center">
       </nav>
 
       {/* Main Content */}
@@ -165,8 +166,7 @@ export default function GroupPage() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-10 bg-gradient-to-t from-purple-300 to-purple-100 text-center text-sm text-purple-800 py-24">
-      </footer>
+      <Footer />
     </div>
   );
 }
