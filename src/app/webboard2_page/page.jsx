@@ -15,7 +15,7 @@ export default function FanPostDetails() {
       </Head>
       <div className="min-h-screen flex flex-col justify-between bg-gradient-to-b from-purple-200 to-white">
         {/* Navbar */}
-        <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-16 px-6 flex justify-between items-center">
+        <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-14 px-6 flex justify-between items-center">
           {/* ว่างไว้ */}
         </nav>
 
@@ -82,7 +82,7 @@ export default function FanPostDetails() {
             </h2>
             <div className="flex justify-center">
               <img
-                src="https://upload.wikimedia.org/wikipedia/th/d/da/4EVE_TheFirstAlbum.jpg"
+                src="https://mellow975.mcot.net/uploads/article/new_676e3a05ec959.jpg"
                 alt="4EVE Album"
                 className="w-60 object-contain rounded"
               />
