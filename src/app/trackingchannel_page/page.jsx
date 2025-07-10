@@ -1,4 +1,5 @@
 "use client";
+import Footer from "../../../components/Footer";
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,7 +10,7 @@ const SocialMediaPage = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-gradient-to-b from-purple-200 to-white">
       {/* Navbar */}
-      <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-10 px-6 flex justify-between items-center">
+      <nav className="bg-gradient-to-b from-purple-400 to-white shadow-md py-16 px-6 flex justify-between items-center">
         {/* โลโก้หรือชื่อเว็บตรงนี้ */}
       </nav>
 
@@ -167,9 +168,7 @@ const SocialMediaPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-t from-purple-200 to-white py-4 text-center text-sm text-gray-500">
-        © 2025 4EVE Fan Page
-      </footer>
+      <Footer />
     </div>
   );
 };
